@@ -5,12 +5,8 @@
     "permissions": [
       "activeTab"
     ],
-    "omnibox": { "keyword" : "tint" },
-    "icons": {
-      "16": "window.jpg"
-    },
     "background": {
-      "scripts": ["backgroundtest.js"],
+      "scripts": ["background.js"],
       "persistent": false
     },
     "browser_action": {
