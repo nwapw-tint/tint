@@ -12,6 +12,13 @@
       "scripts": ["background.js"],
       "persistent": false
     },
+    "content_scripts": [
+      {
+        "matches": ["http://*/*"],
+        "js": ["promptAdd.js"],
+        "run_at": "document_start"
+      }
+    ],
     "omnibox": { "keyword" : "tint" },
         "icons": {
           "16": "window.jpg"

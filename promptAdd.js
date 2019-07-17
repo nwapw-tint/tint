@@ -4,10 +4,11 @@ addTimedFilter(specArray[0],thisName,specArray[2],specArray[3]);
 //adds a filter to the screen for the specified duration. Only works on current page.
 function addTimedFilter(duration,name, opacity, color)
 { */
+//parameter definition
 name = "tint-"+"salmon"
 color = "#fa8072"
 opacity = 0.3;
-duration = 5;
+duration = 100;
 if(document.querySelector('[id^="tint-"]') == null)
 {
     console.log("no existing filter found, adding another");
