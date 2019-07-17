@@ -3,12 +3,19 @@
     "description": "Adds and removes filters from the active tab",
     "version": "1.0",
     "permissions": [
-      "activeTab"
+      "background",
+      "tabs", 
+      "http://*/*",
+      "https://*/*"
     ],
     "background": {
       "scripts": ["background.js"],
       "persistent": false
     },
+    "omnibox": { "keyword" : "tint" },
+        "icons": {
+          "16": "window.jpg"
+        },
     "browser_action": {
       "default_title": "tint the page"
     },

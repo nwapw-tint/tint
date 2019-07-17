@@ -4,3 +4,13 @@ chrome.tabs.executeScript({
 file: 'promptAdd.js'
 })
 })
+chrome.tabs.onActivated.addListener(function(activeInfo) {
+    chrome.tabs.executeScript({
+        file: 'promptAdd.js'
+    })
+});
+//experimental 
+chrome.omnibox.onInputEntered.addListener(
+    function(txt) {
+        alert(txt);
+    });
