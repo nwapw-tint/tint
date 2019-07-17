@@ -20,7 +20,6 @@ if(document.querySelector('[id^="tint-"]') == null)
     body.style.padding = 0;
     body.appendChild(tintDiv);
     tintDiv.appendChild(textDiv);
-    textDiv.appendChild(document.createTextNode(text));
     setTimeout(function (){
         var overlay = document.getElementById(name); //removes the specified filter by id
         overlay.parentNode.removeChild(overlay);
@@ -30,11 +29,15 @@ if(document.querySelector('[id^="tint-"]') == null)
 function styleText(text)
 {
     textDiv.style.position = "absolute";
-    textDiv.style.left  = "50%";
     textDiv.style.top = "50%";
-    textDiv.style.backgroundColor = "white";
+    textDiv.style.left = "50%";
+    textDiv.style.marginRight = "-50%";
+    textDiv.style.transform="translate(-50%, -50%)";
+    textDiv.style.backgroundColor = "black";
+    textDiv.style.color = "#ff69b4" //TODO: set automatically based on tint shade
+    textDiv.style.fontSize = "240px" //TODO: self adjusting size. rn, just set a cap
     textDiv.style.zIndex = 100;
-
+    textDiv.innerHTML = "read pg. 64, 65";
 }
 function styleTint(div) {
     div.style.width = "100%";
@@ -44,4 +47,5 @@ function styleTint(div) {
     div.style.top = 0;
     div.style.left = 0;
     div.style.position = "fixed";
+    div.style.display = "inline-block";
 }
