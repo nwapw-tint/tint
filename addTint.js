@@ -8,29 +8,30 @@ if(document.querySelector('[id^="tint-"]') == null)
     console.log("no existing filter found, adding another");
     var doc = document.documentElement;//running at document_start means there is no head or body
     var tintDiv = document.createElement("div");
-    var textDiv = document.createElement("div");
+    tintDiv.id = name; //allows removal by id
+    tintDiv.style.background = color;
+
     var robotoFont = document.createElement('link');
     robotoFont.setAttribute('rel', 'stylesheet');
     robotoFont.setAttribute('type', 'text/css');
     robotoFont.setAttribute('href', "https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
     doc.appendChild(robotoFont); 
-    tintDiv.id = name; //allows removal by id
-    tintDiv.style.background = color;
     doc.style.height = "100%";
     doc.style.margin = 0;
     doc.style.padding = 0;
     doc.appendChild(tintDiv);
-    tintDiv.appendChild(textDiv);
     styleTint(tintDiv);
-    styleText(text);
+    addText(text);
     setTimeout(function (){
         var overlay = document.getElementById(name); //removes the specified filter by id
         overlay.parentNode.removeChild(overlay);
         },duration*1000);
 
 }else{console.log("An existing filter was found.")}
-function styleText(text)
+function addText(text)
 {
+    var textDiv = document.createElement("div");
     textDiv.style.position = "absolute";
     textDiv.style.top = "50%";
     textDiv.style.left = "50%";
@@ -41,7 +42,8 @@ function styleText(text)
     textDiv.style.color = "#000"; //TODO: set automatically based on tint shade
     textDiv.style.fontSize = "60px"; //TODO: self adjusting size. rn, just set a cap
     textDiv.style.zIndex = 100;
-    textDiv.innerHTML = "read pg. 64, 65";
+    textDiv.innerHTML = text;
+    tintDiv.appendChild(textDiv);
 }
 function styleTint(div) {
     div.style.width = "100%";

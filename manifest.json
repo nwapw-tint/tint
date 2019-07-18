@@ -7,10 +7,19 @@
       "tabs", 
       "<all_urls>"
     ],
+    "commands": {
+      "displayText": {
+        "suggested_key": {
+          "default": "Ctrl+Space",
+          "mac": "Command+Space"
+        },
+        "description": "Flip tabs forward"
+      }
+    },
     "content_scripts": [
       {
         "matches": ["<all_urls>"],
-        "js": ["promptAdd.js"],
+        "js": ["addTint.js"],
         "run_at": "document_start"
       }
     ],
