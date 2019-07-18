@@ -5,12 +5,11 @@
     "permissions": [
       "background",
       "tabs", 
-      "http://*/*",
-      "https://*/*"
+      "<all_urls>"
     ],
     "content_scripts": [
       {
-        "matches": ["https://*/*"],
+        "matches": ["<all_urls>"],
         "js": ["promptAdd.js"],
         "run_at": "document_start"
       }
