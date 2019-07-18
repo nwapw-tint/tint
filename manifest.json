@@ -8,13 +8,9 @@
       "http://*/*",
       "https://*/*"
     ],
-    "background": {
-      "scripts": ["background.js"],
-      "persistent": false
-    },
     "content_scripts": [
       {
-        "matches": ["http://*/*"],
+        "matches": ["https://*/*"],
         "js": ["promptAdd.js"],
         "run_at": "document_start"
       }
