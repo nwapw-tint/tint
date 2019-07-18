@@ -1,7 +1,6 @@
 name = "tint-"+"colorName"
-color = "rgba(0,0,0,0.8)";
+color = "rgba(0,0,0,0.2)";
 duration = 100;
-text = "English HW 3:27";
 
 if(document.querySelector('[id^="tint-"]') == null)
 {
@@ -22,16 +21,17 @@ if(document.querySelector('[id^="tint-"]') == null)
     doc.style.padding = 0;
     doc.appendChild(tintDiv);
     styleTint(tintDiv);
-    addText(text);
+    setupText();
     setTimeout(function (){
         var overlay = document.getElementById(name); //removes the specified filter by id
         overlay.parentNode.removeChild(overlay);
         },duration*1000);
 
 }else{console.log("An existing filter was found.")}
-function addText(text)
+function setupText()
 {
     var textDiv = document.createElement("div");
+    textDiv.id = "textDiv";
     textDiv.style.position = "absolute";
     textDiv.style.top = "50%";
     textDiv.style.left = "50%";
@@ -42,7 +42,6 @@ function addText(text)
     textDiv.style.color = "#000"; //TODO: set automatically based on tint shade
     textDiv.style.fontSize = "60px"; //TODO: self adjusting size. rn, just set a cap
     textDiv.style.zIndex = 100;
-    textDiv.innerHTML = text;
     tintDiv.appendChild(textDiv);
 }
 function styleTint(div) {

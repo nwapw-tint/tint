@@ -13,8 +13,12 @@
           "default": "Ctrl+Space",
           "mac": "Command+Space"
         },
-        "description": "Flip tabs forward"
+        "description": "Displays the current task as text"
       }
+    },
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
     },
     "content_scripts": [
       {
